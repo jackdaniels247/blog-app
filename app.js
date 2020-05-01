@@ -12,8 +12,7 @@ app.use(sanitizer());
 app.set("view engine","ejs");
 var url =process.env.DATABASEURL;
 mongoose.connect(url,{useNewUrlParser: true});
-console.log(url);
- 
+
  var blogSchema= new mongoose.Schema({
     title:String,
     image:String,
