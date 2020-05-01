@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog app</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" >
+    </head>
+    <body>
+        <div class="ui inverted menu">
+            <div class=" ui container">
+                  <a class="header item" href="/"> <i class="code icon" style="font-size:2em;" ></i>Blog Post</a>
+  <a class="item" href="/">
+    Home
+  </a>
+  <a class="item" href="/blog/new">
+    New Post
+  </a>
+            </div>
+
+</div>
+
+    
+    
+    
+    <div class="ui raised  text container segment" style="margin-top:50px;">
+        <div class="content">
+                <h2><%=blog.title%></h2>
+        </div>
+
+    <div class="item">
+        <div>
+                <img class="ui centered rounded image" src="<%=blog.image%>">  
+        </div>
+        
+    </div>
+
+    <div class="description">
+            <p><%-blog.body%></p>
+    </div>
+ <a href="/blog/<%=blog._id%>/edit" class="ui orange basic button">Edit</a>
+ <form style="display:inline;" action="/blog/<%=blog._id%>?_method=DELETE" method="POST">
+<button class="ui red basic button">Delete</button>
+     
+ </form>
+    </div>
+
+
+
+
+
+
+
+  </body>
+</html>

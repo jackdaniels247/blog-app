@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog app</title>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" >
+    </head>
+    <body>
+        
+            <div class="ui inverted menu">
+            <div class=" ui container">
+                  <a class="header item" href="/"> <i class="code icon" style="font-size:2em;" ></i>Blog Site</a>
+  <a class="item" href="/">
+    Home
+  </a>
+  <a class="item" href="/blog/new">
+    New Post
+  </a>
+            </div>
+
+</div>
+        <div class="ui main text container">
+            <div class="ui huge header">
+                <h1>RESTful Blog App</h1>
+            </div>
+            <div class="ui top attached segment">
+                <div class="ui divided items">
+                    <% blogs.forEach(function(blog){%>
+                    <div class="item">
+                        <div class="image">
+                            <img src="<%=blog.image%>"> 
+                        </div>
+                        <div class="content">
+                            <a class="header" href="/blog/<%=blog._id%>"><%=blog.title%></a>
+                        
+                        <div class="meta">
+                            <span><%=blog.created.toDateString() %></span>
+                        </div>
+                        <div class="description">
+                             <p><%-blog.body.substring(0,100)%>...</p>
+                        </div>
+                        <div>
+                            <a class="ui  basic violet button" href="/blog/<%=blog._id%>">Read More
+                            <i class="right chevron icon"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+    
+    
+   
+    
+    
+<% }); %>
+                </div>
+            </div>
+            
+        </div>
+        
+       
+
+
+
+
+    </body>
+</html>
+
