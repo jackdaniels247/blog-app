@@ -10,9 +10,8 @@ app.use(express.static("public"));
 app.use(method("_method"));
 app.use(sanitizer());
 app.set("view engine","ejs");
-var url =process.env.DATABASEURL;
-
-mongoose.connect(url,{useNewUrlParser: true});
+//var url =process.env.DATABASEURL;
+mongoose.connect("mongodb+srv://jack:buddy@cluster0-ngkil.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true});
  
  var blogSchema= new mongoose.Schema({
     title:String,
